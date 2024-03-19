@@ -1,0 +1,24 @@
+version: 0.2
+ 
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - apt-get install -y unzip
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - zip hello.zip ./index.html 
+   
+artifacts:
+  type: 
+  files:
+    - index.html
+    - appspec.yml
+    - scripts/install_dependencies
+    - scripts/start_server
+    - 1.png
+    - aws.gif
+    - back.jpg
